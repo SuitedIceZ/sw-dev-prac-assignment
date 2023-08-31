@@ -9,8 +9,8 @@ export default function Banner () {
             fill={true}
             objectFit='cover'/>
             <div className={style.bannerText}>
-                <h1>ศูนย์บริการฉีดวัคซีนโรคโควิด19 ฟรี</h1>
-                <h3>เพียงแจ้งชื่อ นั่งรอ และพร้อมฉีด</h3>
+                <h1 className='text-4xl font-medium'>ศูนย์บริการฉีดวัคซีนโรคโควิด19 ฟรี</h1>
+                <h3 className='text-3xl font-serif'>เพียงแจ้งชื่อ นั่งรอ และพร้อมฉีด</h3>
             </div>
         </div>
     )

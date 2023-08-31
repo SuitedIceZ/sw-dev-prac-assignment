@@ -1,17 +1,16 @@
 import style from './productcard.module.css'
 import Image from 'next/image'
 
-export default function ProductCard () {
+export default function ProductCard ( { hospitalName, imgSrc } : { hospitalName:string, imgSrc:string } ) {
     return (
         <div className={style.card}>
             <div className={style.cardimg}>
-            <Image src={'/img/vaccine.jpg'}
+            <Image src={imgSrc}
             alt='Vaccine Picture' 
             fill={true}
             objectFit='cover'/>
             </div>
-            <div className={style.cardtext}>วัคซีน (Vaccine) คือ สารชนิดหนึ่งที่ฉีดเข้าสู่ร่างกาย 
-            เพื่อกระตุ้นให้ร่างกายสร้างภูมิคุ้มกันโรค ในวัคซีนมีเชื้อโรคที่ไม่ทำให้เกิดโรค</div>
+            <div className={style.cardtext}>{hospitalName}</div>
         </div>
     )
 }

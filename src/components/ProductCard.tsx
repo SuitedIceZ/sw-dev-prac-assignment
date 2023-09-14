@@ -1,16 +1,17 @@
-import Image from 'next/image'
+import Image from "next/image";
 import InteractiveCard from "./InteractiveCard";
+import { Rating } from "@mui/material";
 
-export default function ProductCard ( { hospitalName, imgSrc } : { hospitalName:string, imgSrc:string } ) {
-    return (
-        <InteractiveCard hospitalName={hospitalName}>
-            <div className='w-full h-[70%] relative rounded-t-lg'>
-            <Image src={imgSrc}
-            alt='Vaccine Picture' 
-            fill={true}
-            className='object-cover rounded-t-lg'/>
-            </div>
-            <div className='w-full h-[30%] p-[10px] text-black'>{hospitalName}</div>
-         </InteractiveCard>
-    )
+export default function ProductCard(props: { hospitalName: string; imgSrc: string, onRating:Function,score:number }) {
+  const { hospitalName, imgSrc, onRating, score } = props;
+
+  return (
+    <InteractiveCard hospitalName={hospitalName}>
+      <div className="w-full h-[60%] relative rounded-t-lg">
+        <Image src={imgSrc} alt="Pic" fill={true} objectFit="cover" />
+      </div>
+      <div className="w-full h-[20%] p-[10px] text-black">{hospitalName}</div>
+      <Rating value={score} onChange={(e,v)=>onRating(hospitalName,v)}/>
+    </InteractiveCard>
+  );
 }

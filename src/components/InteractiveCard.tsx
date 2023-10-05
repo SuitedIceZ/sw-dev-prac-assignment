@@ -21,7 +21,7 @@ export default function InteractiveCard({children,hospitalName}:{children:React.
   }
 
   return(
-    <div className="w-1/5 h-[300px] rounded-lg shadow-lg"
+    <div className="h-[300px] rounded-lg shadow-lg"
     // onClick={()=>onCardSelected()}
     onMouseOver={(e)=>onCardMouseAction(e)}
     onMouseOut={(e)=>onCardMouseAction(e)}

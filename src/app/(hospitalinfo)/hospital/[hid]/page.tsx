@@ -21,7 +21,7 @@ export default async function HospitalDetailPage( {params} : { params: {hid:stri
                     className="rounded-lg w-[30%]">
                 </Image>
                 <div className="flex flex-col">
-                    <div className="text-md mx-5 mb -10 text-black text-left">{ hospitalDetail.data.name }</div>
+                    <div className="text-md mx-5 mb-10 text-black text-left">{ hospitalDetail.data.name }</div>
                     <div className="text-md mx-5 text-black text-left">Address: { hospitalDetail.data.address }</div>
                     <div className="text-md mx-5 text-black text-left">District: { hospitalDetail.data.district }</div>
                     <div className="text-md mx-5 text-black text-left">Province: { hospitalDetail.data.province }</div>

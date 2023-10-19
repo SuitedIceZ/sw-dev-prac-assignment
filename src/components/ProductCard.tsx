@@ -2,7 +2,7 @@ import Image from "next/image";
 import InteractiveCard from "./InteractiveCard";
 import { Rating } from "@mui/material";
 
-export default function ProductCard(props: { hospitalName: string; imgSrc: string, onRating?:Function,score:number }) {
+export default function ProductCard(props: { hospitalName: string; imgSrc: string, onRating?:Function,score?:number }) {
   const { hospitalName, imgSrc, onRating, score } = props;
 
   // const handleRatingChange = (e, v) => {

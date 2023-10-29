@@ -1,5 +1,6 @@
 import Image from "next/image"
 import getHospital from "@/libs/getHospital"
+import Link from "next/link"
 
 export default async function HospitalDetailPage( {params} : { params: {hid:string}}){
 
@@ -28,6 +29,9 @@ export default async function HospitalDetailPage( {params} : { params: {hid:stri
                     <div className="text-md mx-5 text-black text-left">Postalcode: { hospitalDetail.data.postalcode }</div>
                     <div className="text-md mx-5 text-black text-left">Tel: { hospitalDetail.data.tel }</div>
 
+                    {/* <Link href={`/booking?id=${params.hid}&hospitalName=${hospitalDetail.data.name}`}>
+                    <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 text-white shadow-sm">Book a Vaccine</button>
+                    </Link> */}
                 </div>
             </div>
         </main>

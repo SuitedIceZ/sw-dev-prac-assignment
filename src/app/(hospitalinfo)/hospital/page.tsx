@@ -10,20 +10,25 @@ import getUserProfile from "@/libs/getUserProfile";
 export default async function Hospital() {
     const hospitals = getHospitals();
     const session = await getServerSession(authOptions);
-    if (!session || !session.user.token) return null;
-    const profile = await getUserProfile(session.user.token);
+    // if (!session || !session.user.token) return null;
+    let profile = null;
+    // if((!session || !session.user.token))
+    if((session && session.user.token))
+        profile = await getUserProfile(session.user.token);
     return (
         <main className="text-center p-5">
             <h1 className="text-xl font-medium text-black">Select Your hospital</h1>
             <Suspense fallback={ <p>Loading ... <LinearProgress/></p>}>
                 <HospitalCatalog hospitalJson={hospitals}/>
             </Suspense>
-            <UserProfileCard/>
             {
-                (profile.data.role == "admin")?
-                <AddHospitalForm/>
-                : <></>
-            } 
+                (session && session.user.token) ?
+                <UserProfileCard/> : <></>
+            }
+            {
+                (session && session.user.token && profile.data.role == "admin")?
+                <AddHospitalForm/> : <></>
+            }
         </main>
     )
 }

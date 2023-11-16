@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 export default async function HospitalCatalog({hospitalJson}: {hospitalJson:Object}) {
     const hospitalJsonReady = await hospitalJson;
+    
     return (
         <>
-        Explore {hospitalJsonReady.count} models in our calalog
+        <h1 className="text-xl font-small text-black">Explore {hospitalJsonReady.count} hospitals in our system</h1>
+
         <div className= "m-5 flex flex-row content-around justify-around flex-wrap" >
         {
           hospitalJsonReady.data.map((hospitalItem:Object)=>(
